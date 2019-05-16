@@ -1,0 +1,17 @@
+{
+    "name": "ml/recruteo",
+    "description": "\"projet recruteo\"",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Marie-Line Ferron",
+            "email": "ferron.ml@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    }
+}
