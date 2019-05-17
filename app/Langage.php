@@ -35,5 +35,12 @@ class Langage
         return $this;
     }
 
-
+    public function findAllLangage(){
+        $sql = "SELECT * FROM langage;";
+        $stmt = $this->db->getPdo()->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, 'App\Langage');
+        $resultat = $stmt->fetchAll();
+        return $resultat;
+    }
 }

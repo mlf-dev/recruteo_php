@@ -20,4 +20,7 @@ if ($uri == 'main/index'){
 } else if ($uri == 'developpeur/profil'){
     $controller = new \App\Http\Controllers\DeveloppeurController();
     $controller->profil();
+} else if ($uri == 'developpeur/add'){
+    $controller = new \App\Http\Controllers\DeveloppeurController();
+    $controller->add();
 }

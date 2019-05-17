@@ -8,6 +8,7 @@
     <title>Développeurs</title>
 </head>
 <body>
+    <?php require 'resources/views/layouts/menu.php' ?>
     <h2>Voici la liste des développeurs de l'équipe : <?= $nom_equipe ?></h2>
     <ul>
         <?php foreach($developpeurs as $developpeur) :?>

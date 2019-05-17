@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Developpeur;
+use App\Langage;
 
 class DeveloppeurController
 {
@@ -30,5 +31,12 @@ class DeveloppeurController
 
             require 'resources/views/developpeur/profil.php';
         }
+    }
+
+    //page pour ajouter un nouveau développeur
+    public function add(){
+        $langage = new Langage();
+        $langages = $langage->findAllLangage();
+        require 'resources/views/developpeur/add.php';
     }
 }
