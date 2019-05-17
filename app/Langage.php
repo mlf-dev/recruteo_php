@@ -8,6 +8,7 @@ use App\Kernel\DB;
 
 class Langage
 {
+    private $id;
     private $nom;
 
     private $db;
@@ -16,6 +17,26 @@ class Langage
     {
         $this->db = new DB();
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     * @return Langage
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+
 
     /**
      * @return mixed

@@ -20,12 +20,11 @@
             <textarea id="bio" cols="30" rows="10" name="bio"></textarea>
         </div>
         <div>
+            <?php foreach ($langages as $langage) :?>
             <label>
-                <input type="checkbox" name="languages[]" value="php">Php
+                <input type="checkbox" name="languages[]" value="<?= $langage->getId() ?>"><?= $langage->getNom() ?>
             </label> <br/>
-            <label>
-                <input type="checkbox" name="languages[]" value="javascript">Javascript
-            </label> <br/>
+            <?php endforeach; ?>
         </div>
         <div>
             <input type="submit">
