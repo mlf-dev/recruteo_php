@@ -104,8 +104,8 @@ INSERT INTO equipe_developpeur(date_inscription, id_developpeur, id_equipe) VALU
 INSERT INTO equipe_developpeur(date_inscription, id_developpeur, id_equipe) VALUES (NOW(),10,2);
 INSERT INTO equipe_developpeur(date_inscription, id_developpeur, id_equipe) VALUES (NOW(),11,2);
 
--- consulter la liste des développeurs appartenant à une équipe
-SELECT * FROM developpeur
+-- consulter la liste des développeurs appartenant à une équipe, qui elle, appartient à une société
+SELECT * FROM developpeur d
 LEFT JOIN equipe_developpeur ed on developpeur.id = ed.id_developpeur
 LEFT JOIN equipe e on e.id = ed.id_equipe
 LEFT JOIN societe s on s.id = e.id_societe;

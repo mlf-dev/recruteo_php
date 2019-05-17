@@ -3,6 +3,8 @@
 
 namespace App;
 
+// import de la class DB qui est dans un autre namespace
+use App\Kernel\DB;
 
 class Equipe
 {
@@ -10,6 +12,13 @@ class Equipe
     private $nom;
     private $created_at;
     private $id_societe;
+
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new DB();
+    }
 
     /**
      * @return mixed
@@ -83,5 +92,15 @@ class Equipe
         return $this;
     }
 
+    public function findAllEquipe(){
+        $sql = "SELECT * FROM EQUIPE";
+        // préparation de la requête
+        $stmt = $this->db->getPdo()->prepare($sql);
+        // execution de la requête : on récupère la réponse et on la transforme en objet de type Equipe, les objets vont être hydratés par la base de données
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_CLASS,'App\Equipe');
+        $resultat = $stmt->fetchAll();
+        return $resultat;
+    }
 
 }
