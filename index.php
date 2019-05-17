@@ -17,4 +17,7 @@ if ($uri == 'main/index'){
 } else if ($uri == 'developpeur/index'){
     $controller = new \App\Http\Controllers\DeveloppeurController();
     $controller->index();
+} else if ($uri == 'developpeur/profil'){
+    $controller = new \App\Http\Controllers\DeveloppeurController();
+    $controller->profil();
 }

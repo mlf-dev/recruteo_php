@@ -35,7 +35,7 @@
             <th><?= $equipe->getNom() ?></th>
             <th><?= $equipe->getCreatedAt() ?></th>
             <th>
-                <a href="index.php?uri=developpeur/index&id=<?= $equipe->getId() ?>">Voir tous les développeurs</a>
+                <a href="index.php?uri=developpeur/index&id=<?= $equipe->getId() ?>&nom=<?= $equipe->getNom() ?>">Voir tous les développeurs</a>
             </th>
         </tr>
         <?php endforeach; ?>
